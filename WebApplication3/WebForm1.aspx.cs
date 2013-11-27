@@ -43,9 +43,18 @@ namespace WebApplication3
                 myPanel.Controls.Add(newButton);
                 newButton.Click += changeLabel;
             //}
+
+            LinkButton lb = new LinkButton();
+            lb.Text = "This is a link button";
+            lb.ID = "lb";
+            lb.Click += clickLink;
+            myPanel2.Controls.Add(lb);
             
+
+
             /*merge, dar nu folosim varianta asta*/
            //Greetings += "Sunt in Page_Load ";
+
             label_concatenation.Text += "Sunt in Page_Load ";
 
             /*apare doar pentru prima data cu if (!IsPostBack)*/
@@ -126,9 +135,17 @@ namespace WebApplication3
             }
         }
 
+        /*ex 2*/
         public void concatenateStrings(object sender, EventArgs e)
         {
             label_concatenation.Text += "Am dat click pe buton ";
+        }
+
+        /*ex 3*/
+        public void clickLink(object sender, EventArgs e)
+        {
+            //Response.Write("<script>alert('###');</script>");
+            Response.Redirect("~/About.aspx");
         }
     }
 
