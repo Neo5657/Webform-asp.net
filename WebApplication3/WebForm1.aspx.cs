@@ -25,12 +25,12 @@ namespace WebApplication3
 
         protected void Page_Preinit(object sender, EventArgs e)
         {
-            label_concatenation.Text += "Sunt in Page_Preinit ";
+            label_concatenation.Text += "Sunt in Page_Preinit<br/> ";
         }
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            label_concatenation.Text += "Sunt in Page_Init ";
+            label_concatenation.Text += "Sunt in Page_Init<br/> ";
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -55,12 +55,12 @@ namespace WebApplication3
             /*merge, dar nu folosim varianta asta*/
            //Greetings += "Sunt in Page_Load ";
 
-            label_concatenation.Text += "Sunt in Page_Load ";
+            label_concatenation.Text += "Sunt in Page_Load<br/> ";
 
             /*apare doar pentru prima data cu if (!IsPostBack)*/
             if (!IsPostBack)
             {
-                label_concatenation.Text += "Am aparut fara PostBack!!! ";
+                label_concatenation.Text += "Am aparut fara PostBack!!!<br/> ";
             }
 
         }
@@ -71,17 +71,17 @@ namespace WebApplication3
             {
                 Page.Title = Title;
             }
-            label_concatenation.Text += "Sunt in Page_Prerender\n";
+            label_concatenation.Text += "Sunt in Page_Prerender<br/>";
         }
 
         protected void Page_Unload(object sender, EventArgs e)
         {
-            label_concatenation.Text += "Sunt in Page_Unload ";
+            label_concatenation.Text += "Sunt in Page_Unload<br/> ";
         }
 
         protected void Page_Render(object sender, EventArgs e)
         {
-            label_concatenation.Text += "Sunt in Page_Render ";
+            label_concatenation.Text += "Sunt in Page_Render<br/> ";
         }
 
         protected void changeLabel(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace WebApplication3
         /*ex 2*/
         public void concatenateStrings(object sender, EventArgs e)
         {
-            label_concatenation.Text += "Am dat click pe buton ";
+            label_concatenation.Text += "Am dat click pe buton<br/> ";
         }
 
         /*ex 3*/

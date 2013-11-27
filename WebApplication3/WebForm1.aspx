@@ -28,7 +28,7 @@
     <asp:CheckBox id="check" Text="Click to hide panel" OnCheckedChanged="hidePanel" AutoPostBack="true" runat="server"/>
 
     <asp:Panel id="myPanel2" Height="200" Width="350" BorderColor="#3333cc" BorderStyle="Outset" runat="server">
-        <asp:Label id="label_concatenation" Text="Waiting..." runat="server" />
+        <asp:Label id="label_concatenation" runat="server" EnableViewState="false" />
         <asp:Button id="btn_concatenation" OnClick="concatenateStrings" Text="Concatenate Strings" runat="server" /><br />
 
         <asp:HyperLink Text="I am actually a hyperlink" NavigateUrl="~/About.aspx" target="_blank" runat="server" /><br />
