@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
     </div>
-    <asp:Panel id="myPanel" Height="200" Width="300" BorderColor="#3333cc" BorderStyle="Outset" runat="server">
+    <asp:Panel id="myPanel" Height="200" Width="350" BorderColor="#3333cc" BorderStyle="Outset" runat="server">
         <asp:Label id="label_cartoon" AssociatedControlId="txtbox_cartoon" Text="Cartoon:" runat="server" />
         <asp:TextBox id="txtbox_cartoon" CssClass="textInput" runat="server"/>
         <asp:Button id="btn_cartoon" OnClick="tryIt" Text="Try it" runat="server" />
@@ -27,6 +27,11 @@
 
     <asp:CheckBox id="check" Text="Click to hide panel" OnCheckedChanged="hidePanel" AutoPostBack="true" runat="server"/>
 
+    <asp:Panel id="myPanel2" Height="200" Width="350" BorderColor="#3333cc" BorderStyle="Outset" runat="server">
+        <asp:Label id="label_concatenation" Text="Waiting..." runat="server" />
+        <asp:Button id="btn_concatenation" OnClick="concatenateStrings" Text="Concatenate Strings" runat="server" />
+
+    </asp:Panel>
 
     </form>
 </body>

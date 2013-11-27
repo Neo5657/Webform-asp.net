@@ -29,6 +29,7 @@ namespace WebApplication3
                 myPanel.Controls.Add(newButton);
                 newButton.Click += changeLabel;
             //}
+           
         }
 
         void changeLabel(object sender, EventArgs e)
@@ -87,6 +88,11 @@ namespace WebApplication3
             {
                 label_cartoon.Text = dropDownText;
             }
+        }
+
+        public void concatenateStrings(object sender, EventArgs e)
+        {
+
         }
     }
 
