@@ -7,11 +7,22 @@ namespace WebApplication3
 {
     public class Employee
     {
-        public String name { get; set; }
-        public long id { get; set; }
-        public String homeCity { get; set; }
-        public String department  { get; set; }
-        public String company { get; set; }
+        public String Name { get; set; }
+        public long Id { get; set; }
+        public String HomeCity { get; set; }
+        public String Department  { get; set; }
+        public String Company { get; set; }
+
+
+
+        public Employee(String _name, long _id, String _homeCity, String _department, String _company)
+        {
+            Name = _name;
+            Id = _id;
+            HomeCity = _homeCity;
+            Department = _department;
+            Company = _company;
+        }
 
         /*private string _name;
         private long id;

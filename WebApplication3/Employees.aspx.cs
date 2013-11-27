@@ -11,7 +11,11 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Employee
+            EmployeeService myE = new EmployeeService();
+            myE.createEmployees();
+            List<Employee> allEmployees=  myE.getAll();
+            myRepeater.DataSource = allEmployees;
+            myRepeater.DataBind();
         }
     }
 }
