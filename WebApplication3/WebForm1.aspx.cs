@@ -14,9 +14,23 @@ namespace WebApplication3
         public string Title
         {
             get { return ViewState["titlu"] == null ? "" : ViewState["titlu"].ToString(); }
-            set { ViewState["titlu"] = value; }
+            set { ViewState["titlu"] = value; } 
+        }
 
-            
+        public String Greetings
+        {
+            get { return ViewState["message"] == null ? "" : ViewState["message"].ToString(); }
+            set { ViewState["message"] = value; }
+        }
+
+        protected void Page_Preinit(object sender, EventArgs e)
+        {
+            label_concatenation.Text += "Sunt in Page_Preinit ";
+        }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            label_concatenation.Text += "Sunt in Page_Init ";
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -29,13 +43,17 @@ namespace WebApplication3
                 myPanel.Controls.Add(newButton);
                 newButton.Click += changeLabel;
             //}
-           
-        }
+            
+            /*merge, dar nu folosim varianta asta*/
+           //Greetings += "Sunt in Page_Load ";
+            label_concatenation.Text += "Sunt in Page_Load ";
 
-        void changeLabel(object sender, EventArgs e)
-        {
-            label_cartoon.Text = "Click me too";
-            //throw new NotImplementedException();
+            /*apare doar pentru prima data cu if (!IsPostBack)*/
+            if (!IsPostBack)
+            {
+                label_concatenation.Text += "Am aparut fara PostBack!!! ";
+            }
+
         }
 
         protected void Page_Prerender(object sender, EventArgs e)
@@ -44,7 +62,25 @@ namespace WebApplication3
             {
                 Page.Title = Title;
             }
+            label_concatenation.Text += "Sunt in Page_Prerender\n";
         }
+
+        protected void Page_Unload(object sender, EventArgs e)
+        {
+            label_concatenation.Text += "Sunt in Page_Unload ";
+        }
+
+        protected void Page_Render(object sender, EventArgs e)
+        {
+            label_concatenation.Text += "Sunt in Page_Render ";
+        }
+
+        protected void changeLabel(object sender, EventArgs e)
+        {
+            label_cartoon.Text = "Click me too";
+            //throw new NotImplementedException();
+        }
+
 
         /*gets the text from the textbox and writes it in the label*/
         public void tryIt(Object sender, EventArgs e)
@@ -92,7 +128,7 @@ namespace WebApplication3
 
         public void concatenateStrings(object sender, EventArgs e)
         {
-
+            label_concatenation.Text += "Am dat click pe buton ";
         }
     }
 
