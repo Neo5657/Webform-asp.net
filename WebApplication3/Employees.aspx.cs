@@ -11,11 +11,26 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EmployeeService myE = new EmployeeService();
-            myE.createEmployees();
-            List<Employee> allEmployees=  myE.getAll();
-            myRepeater.DataSource = allEmployees;
-            myRepeater.DataBind();
+            if (!Page.IsPostBack)
+            {
+                //myRepeater.DataSource = allEmployees;
+                //myRepeater.DataBind();
+
+                if (HttpContext.Current.Session["list"] == null)
+                {
+                    EmployeeService myE = new EmployeeService();
+                    myE.createEmployees();
+                    List<Employee> allEmployees = myE.getAll();
+                    HttpContext.Current.Session["list"] = allEmployees;
+                    myGridView.DataSource = HttpContext.Current.Session["list"];
+                    myGridView.DataBind();
+                }
+                else
+                {
+                    myGridView.DataSource = HttpContext.Current.Session["list"];
+                    myGridView.DataBind();
+                }
+            }
         }
     }
 }

@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="addEmployee.aspx" />
     <Content Include="Employees.aspx" />
+    <Content Include="GridView.css" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -69,6 +71,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addEmployee.aspx.cs">
+      <DependentUpon>addEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEmployee.aspx.designer.cs">
+      <DependentUpon>addEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="Employees.aspx.cs">
