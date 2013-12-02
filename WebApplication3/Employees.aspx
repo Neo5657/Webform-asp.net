@@ -75,7 +75,7 @@
 
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:Button ID="btn_delete" Text="Delete" runat="server"/>
+                        <asp:Button ID="btn_delete" OnClick="btn_delete_Click" Text="Delete" runat="server"/>
                     </ItemTemplate>
                 </asp:TemplateField>
 

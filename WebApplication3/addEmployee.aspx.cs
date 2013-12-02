@@ -21,33 +21,33 @@ namespace WebApplication3
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
-            var myEmployee = (HttpContext.Current.Session["list"] as List<Employee>) ?? new List<Employee>();
+            var myEmployees = (HttpContext.Current.Session["list"] as List<Employee>) ?? new List<Employee>();
 
             /*take data completed by user*/
             String name = txtbox_name.Text;
             String city = txtbox_city.Text;
             String dpt = txtbox_dpt.Text;
             String comp = txtbox_comp.Text;
-            long id = myEmployee.Max(x => x.Id) + 1;
+            long id = myEmployees.Max(x => x.Id) + 1;
             String mgrString = drop_down.SelectedValue;
-            //int mgrNumber = Integer.Parse(mgrString);
             int mgrNumber = Convert.ToInt32(mgrString);
 
-            EmployeeService myE = new EmployeeService();
-            List<Employee> allEmployees = myE.getAll();
-            Employee mgr = allEmployees.FirstOrDefault<Employee>(p => p.Id == mgrNumber);
+            //EmployeeService myE = new EmployeeService();
+            //List<Employee> allEmployees = myE.getAll();
+            //Employee mgr = allEmployees.FirstOrDefault<Employee>(p => p.Id == mgrNumber);
+
+            Employee mgr = myEmployees.FirstOrDefault<Employee>(p => p.Id == mgrNumber);
 
             Employee ee = new Employee(name, id, city, dpt, comp, mgr);
-
-            //Employee newEmployee = new Employee(name, id, city, dpt, comp);
-
-            
-            myEmployee.Add(ee);
-
-            
+            myEmployees.Add(ee);
 
             //HttpContext.Current.Session["list"] = myEmployee;
 
+            Response.Redirect("Employees.aspx");
+        }
+
+        protected void btn_add_Cancel(object sender, EventArgs e)
+        {
             Response.Redirect("Employees.aspx");
         }
     }

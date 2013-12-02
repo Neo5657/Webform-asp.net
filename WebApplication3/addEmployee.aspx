@@ -28,7 +28,7 @@
         </asp:DropDownList> <br />
 
         <asp:Button ID="btn_add" Text="Add" onClick="btn_add_Click" runat="server"/>
-        <asp:Button ID="btn_cancel" Text="Cancel" runat="server"/>
+        <asp:Button ID="btn_cancel" onClick="btn_add_Cancel" Text="Cancel" runat="server"/>
     </div>
     </form>
 </body>
